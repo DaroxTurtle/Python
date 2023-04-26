@@ -14,7 +14,9 @@ print('E7.1_042423.py')
 
 UI = input('Enter a file name: ')
 # User Input
-
 FO = open(UI)
+for line in FO:
+    line = line.rstrip()
+    print(line)
 
-print(FO.upper())
+print(FO)
