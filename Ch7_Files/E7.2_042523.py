@@ -9,3 +9,25 @@ print('E7.2_042523.py')
 # output as shown below. Do not use the sum() function or a variable
 # named sum in your solution.
 
+UI = input('Enter a file name: ')
+FO = open(UI)
+# User input and opening the file
+
+count = 0
+TotalFvalue = 0
+# To find average and sum of X-DSPAM-Confidence.
+
+for line in FO:
+    if not line.startswith('X-DSPAM-Confidence: '):
+        continue
+    # If line doesnt include what we're looking for it is skipped.
+
+    count = count + 1
+    Fvalue = float(line[19:40])
+    # If we find line we add 1 to the count and remove string to change it to float.
+
+    TotalFvalue = TotalFvalue + Fvalue
+    # Summing total value of X-DSPAM-Confidence
+    
+    Average = TotalFvalue / count
+print('Average spam confidence:', Average)
