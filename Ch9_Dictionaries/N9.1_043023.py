@@ -56,4 +56,4 @@ print(purse) # Printed output,
 # In a curly brace '{}' we make the list by key : value pairs.
 # We can make an empty dictionary using empty curly braces.
 jjj = { 'chuck' : 1 , 'fred' : 42 , 'jan' : 100}
-print(jjj)
+# 'chuck' is the key and the value for 'chuck' is 1.
