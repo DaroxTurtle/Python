@@ -5,27 +5,21 @@ print('E9.2_050323.py')
 # To do this look for lines that start with 'From', then look for the third word and keep a running count
 # of each of the days of the week. At the end of the program print out the contents of your dictionary (order does not matter).
 
-dictionary = dict()
-Uinput = input('Enter file name: ')
-try:
+counter = dict()
+Uinput = input('Enter a file name: ')
+
+try:                                    # Try/Except
     fhand = open(Uinput)
 except:
     print('File does not exist.')
     quit()
 
-for line in fhand:
-    line = line.rstrip()
+for line in fhand:                                  # For loop for finding the lines and counter
+    if line.startswith('From '):                    # Finding lines that start with From.
+        line = line.rstrip().split()                # Removing blank spaces
+        days = line[2]                              # Line where the days are within the prompt
+        counter[days] = counter.get(days, 0) + 1    # Counting the amount of days that was included
 
-    if line.startswith('From '):    # Finding From header
-        split = line.split()
-        Day = split[2]              # grabbing day from the file
-
-        if Day not in dictionary:   # If the day is not in the dictionary.
-            dictionary[Day] = 1     # Adding day to the dictionary
-        else:
-            dictionary[Day] = dictionary[Day] + 1   # If day is already in dictionary, add + 1.
-
-sorteddictionary = sorted(dictionary.items(), key=lambda x:x[1], reverse=True) # sorting dictionary from highest value to lowest value
-converted_dictionary = dict(sorteddictionary)   # Converting sorted dictionary
-print(converted_dictionary)
-
+sortcounter = sorted(counter.items(), key=lambda x:x[1], reverse = True)    # Grabbed from the internet to sort dictionaries
+convertedcounter = dict(sortcounter)                                        # Converting sorted counter
+print(convertedcounter)

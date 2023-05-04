@@ -6,31 +6,26 @@ print('E9.4_050323.py')
 # to find who has the most messages and print how many messages the person has.
 
 # Code came from E9.3,
-dictionary = dict()
-Uinput = input('Enter file name: ')
+histogram = dict()
+uinput = input('Enter file name: ')
 
-try:                                    # Try and Except so if file doesn't exist no traceback.
-    fhand = open(Uinput)
+try: # Try / Except
+    fhand = open(uinput)
 except:
-    print('The file does not exist.')
-    exit()
+    print('The file does not exist.') 
+    quit()
 
 for line in fhand:
-    line = line.rstrip()
     if line.startswith('From '):
-        split = line.split()
-        email = split[1]
-        if email not in dictionary:
-            dictionary[email] = 1
-        else:
-            dictionary[email] = dictionary[email] + 1
+        line = line.rstrip().split()
+        email = line[1]
+        histogram[email] = histogram.get(email, 0) + 1
 
-bigword = None
-bigcount = None
+lsf = -1        # Largest so far
+lsfword = None  # Word from lsf
+for k, v in histogram.items():          # for entry and value in histogram which is {x, y}
+    if v > lsf:                         # if value is greater than largest so far,
+        lsfword = k                     # then lsfword will be entry
+        lsf = v                         # then lsf will be value
 
-for largest, most in dictionary.items():
-    if bigcount is None or most > bigcount:
-        bigcount = most
-        bigword = largest
-
-print(bigword, bigcount)
+print(lsfword, lsf)

@@ -1,10 +1,5 @@
-print('E9.5_050323.py')
+print('Test.py is where I modify my exercises to make them more proper.')
 
-# Exercise 9.5
-# This program records the domain name (instead of the address) where the message was sent from instead
-# of who the mail came from. At the end of the program, print out the conents of your dictionary.
-
-# Code came from E9.3 & E9.4,
 domains = dict()
 uinput = input('Enter file name: ')
 

@@ -2,27 +2,23 @@ print('E9.3_050323.py')
 
 # Exercise 9.3
 # Write a program to read through a mail log, build a histogram using a dictionary
-# to count how many messages have come form each email address and print the dictionary.
+# to count how many messages have come from each email address and print the dictionary.
 
-dictionary = dict()
-Uinput = input('Enter file name: ')
+histogram = dict()
+uinput = input('Enter file name: ')
 
-try:                                    # Try and Except so if file doesn't exist no traceback.
-    fhand = open(Uinput)
+try: # Try / Except
+    fhand = open(uinput)
 except:
-    print('The file does not exist.')
-    exit()
+    print('The file does not exist.') 
+    quit()
 
 for line in fhand:
-    line = line.rstrip()
     if line.startswith('From '):
-        split = line.split()
-        email = split[1]
-        if email not in dictionary:
-            dictionary[email] = 1
-        else:
-            dictionary[email] = dictionary[email] + 1
+        line = line.rstrip().split()
+        email = line[1]
+        histogram[email] = histogram.get(email, 0) + 1
 
-print(dictionary) 
+print(histogram)
 # While the output is very similar, but their order is not similar.
 # Idk how to fix it xd

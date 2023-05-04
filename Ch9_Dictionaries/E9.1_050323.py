@@ -12,10 +12,7 @@ for line in File:           # first for line loop is to split all the sentences 
     split = line.split()    # .split() to make them individal words
 
     for word in split:                         # Putting them on dictionary
-        if word not in counts:
-            counts[word] = 1
-        else:
-            counts[word] = counts[word] + 1
+        counts[word] = counts.get(word, 0) + 1
 
 Uinput = input('Check whether string is in the dictionary: ')
 print('Checking...')
