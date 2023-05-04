@@ -14,10 +14,10 @@ except:
     quit()
 
 for line in fhand:
-    if line.startswith('From '):
-        line = line.rstrip().split()
-        email = line[1]
-        histogram[email] = histogram.get(email, 0) + 1
+    if line.startswith('From '):                            # Seperating texts with From
+        line = line.rstrip().split()                        # Removing blank spaces and \n's.
+        email = line[1]                                     # Grabbing email from lines
+        histogram[email] = histogram.get(email, 0) + 1      # Counting how many messages came from that email.
 
 print(histogram)
 # While the output is very similar, but their order is not similar.
