@@ -20,12 +20,21 @@ for k, v in sorted(b.items()):  # .sorted() by Key.
     print(k, v)
 
 # -- -- -- Sort by Value instead of Key -- -- --
-# If we construct a list of tuples of the form (value, key) we could sort by value.
-# We do this with a for loop that creates a list of tuples.
+# If we construct a list of Tuples of the form (Value, Key) we could sort by Value.
+# We do this with a for loop that creates a list of Tuples.
 c = {'a':10, 'b':1, 'c':22}
 tmp = list()                    # A temporary Tuple.
 for k, v in c.items():          # I converted c variable to be a Tuple
-    tmp.append( (v, k) )        # I did the opposite instead of doing (k, v), I did (v, k) so we can sort the values instead of the keys.
-                                # However, this is still not sorted. We placed the values first. So we can sort them using sorted() function.
-tmp = sorted(tmp) # reverse=True allows us to have a descending order of values in a Tuple. So, instead of (v, k) the reverse=True allowed me to reorder them to (k, v). 
-print(tmp)                      # This will have 
+    tmp.append( (v, k) )        # I did the opposite instead of doing (k, v), I did (v, k) so we can sort the Values instead of the Keys.
+                                # However, this is still not sorted. We placed the Values first. So we can sort them using sorted() function.
+tmp = sorted(tmp, reverse=True) # reverse=True allows us to have a descending order of Values in a Tuple. Since, it will show the b Key to be first and c Key to be the last.
+
+for v, k in tmp:
+    print(k, v)                 # To sort them to (k, v), instead of (v,k)
+
+# --- --- --- Even Shorter Version --- --- ---
+d = {'a':10, 'b':1, 'c':22}
+print( sorted( [ (v,k) for k,v in d.items() ] ) )
+# List comprehension creates a dynamic list. In this case,
+# we made a list of reversed tuples and then sort it.
+
