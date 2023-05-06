@@ -1,4 +1,5 @@
 print('E10.3_050523.py')
+import string # allows for string.ascii_lowercase
 
 # Exercise 10.3
 # Write a program that reads a file and prints the letters in decreasing order of frequency.
@@ -13,3 +14,9 @@ dictionary = dict()
 
 for text in fhand:
     text = text.lower()
+    for line in text:
+        if line in string.ascii_lowercase:
+            dictionary[line] = dictionary.get(line, 0) + 1
+        
+for letters, counts in sorted(dictionary.items()):
+    print(letters, counts)
