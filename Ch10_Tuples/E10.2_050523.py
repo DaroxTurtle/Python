@@ -5,6 +5,8 @@ print('E10.2_05023.py')
 # You can pull the hour from the "From" line by finding the time string and then splitting that string into parts using the colon character.
 # Once you have accumulated the counts for each hour, print out the counts, one per line, sorted by hour as shown below.
 
+# Removed try / except was unnecessary on code.
+
 Uinput = input('Enter a file name: ')
 fhand = open(Uinput)
 dictionary = dict()

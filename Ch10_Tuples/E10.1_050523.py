@@ -1,6 +1,7 @@
 print('E10.1_050523.py')
 
-# Exercise 1: Revise a prveious program as follows: Read and parse the "From" lines and pull out the addresses from the line.
+# Exercise 10.1
+# Revise a prveious program as follows: Read and parse the "From" lines and pull out the addresses from the line.
 # Count the number of messages from each person using a dictionary.
 
 # After all the data has been read, print the person with the most commits by creating a list of (count, email) tuples from the dictionary.

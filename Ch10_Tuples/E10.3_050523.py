@@ -16,7 +16,7 @@ for text in fhand:
     text = text.lower()
     for line in text:
         if line in string.ascii_lowercase:
-            dictionary[line] = dictionary.get(line, 0) + 1
+            dictionary[line] = dictionary.get(line, 0) + 1      # Frequency
         
-for letters, counts in sorted(dictionary.items()):
+for letters, counts in sorted(dictionary.items()):              # Sorting A-Z
     print(letters, counts)
