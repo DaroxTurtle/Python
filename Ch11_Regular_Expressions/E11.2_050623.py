@@ -19,6 +19,7 @@ total = 0
 for line in fhand:
     line = line.rstrip()
     if re.findall('^New .*Revision:\s([^\s]*)', line):
+        print(line)
         count = count + 1
         if count >= 1:
             line = line.split()
