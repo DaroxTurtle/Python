@@ -11,6 +11,6 @@ y = re.findall('@([^ ]*)', line)
 # @ is look through the string until you find an @.
 # Then [^ ] non-blank characters. 
 # * then 0 or more times until it finds a blank
-
+print(y)
 # Refining
-y = re.findall('^From .*@([^ ]*)')
+y = re.findall('^From .*@([^ ]*)', line)
